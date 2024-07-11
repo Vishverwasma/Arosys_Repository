@@ -1,0 +1,135 @@
+All JSON File for POSTMAN Testing :-
+
+Here are the JSON examples for each endpoint in your `CustomerController` class:
+
+### 1. GET All Customers
+- **Endpoint:** GET `/customer`
+
+
+### 2. GET Customer by ID
+- **Endpoint:** GET `/customer/{id}`
+
+
+### 3. POST Create Customer
+- **Endpoint:** POST `/customer/new`
+{
+    "name": "Alice Johnson",
+    "clientType": "Free",
+    "active": true,
+    "nextRunTs": "2024-07-17T09:00:00"
+}
+
+### 4. PUT Update Customer
+- **Endpoint:** PUT `/customer/update/{id}`
+
+{
+    "name": "Jane Doe",
+    "clientType": "Standard",
+    "active": true,
+    "nextRunTs": "2024-07-10T18:00:00"
+}
+
+
+### 5. DELETE Customer
+- **Endpoint:** DELETE `/customer/delete/{id}`
+
+- **JSON Response Example (Customer not found for ID 999):**
+
+1. **GET All Jobs (`/jobs`)**:
+   - Request: `GET /jobs`
+
+2. **GET Job by ID (`/jobs/{id}`)**:
+   - Request: `GET /jobs/1`
+
+3. **POST Create Job (`/jobs/new`)**:
+   - Request: `POST /jobs/new`
+   - Body:
+     ```json
+     {
+         "clientId": 103,
+         "flowName": "Job v3",
+         "priority": "low",
+         "jobStatus": "Pending",
+         "createdAt": "2024-07-11T08:15:00"
+     }
+
+4. **PUT Update Job (`/jobs/update/{id}`)**:
+   - Request: `PUT /jobs/update/2`
+   - Body:
+     ```json
+     {
+         "flowName": "Updated Job v2",
+         "priority": "regular",
+         "jobStatus": "Completed",
+         "createdAt": "2024-07-09T14:20:30"
+     }
+ 
+5. **DELETE Job (`/jobs/delete/{id}`)**:
+   - Request: `DELETE /jobs/delete/3`
+   - Response: Status `200 OK` if successful.
+
+
+1. **GET All Task Rules (`/task-rule`)**:
+   - Request: `GET /task-rule`
+
+2. **GET Task Rule by ID (`/task-rule/{id}`)**:
+   - Request: `GET /task-rule/1`
+
+3. **POST Create Task Rule (`/task-rule`)**:
+   - Request: `POST /task-rule`
+   - Body:
+     ```json
+     {
+         "clientType": "Free",
+         "taskSeqId": 301,
+         "dependendOnTaskSeqId": 0,
+         "taskStatus": "Waiting"
+     }
+
+4. **PUT Update Task Rule (`/task-rule/{id}`)**:
+   - Request: `PUT /task-rule/2`
+   - Body:
+     ```json
+     {
+         "clientType": "Standard",
+         "taskSeqId": 201,
+         "dependendOnTaskSeqId": 0,
+         "taskStatus": "Ready"
+     }
+    ```
+
+5. **DELETE Task Rule (`/task-rule/{id}`)**:
+   - Request: `DELETE /task-rule/3`
+
+
+1. **GET All Tasks (`GET /task/all`)**:
+   - Request: `GET /task/all`
+
+2. **GET Task by ID (`GET /task/{id}`)**:
+   - Request: `GET /task/1`
+
+3. **POST Create Task (`POST /task/new`)**:
+   - Request: `POST /task/new`
+   - Body:
+     ```json
+     {
+         "jobId": 103,
+         "taskSeqId": 3,
+         "dependentOnTaskSeqId": 2,
+         "taskStatus": "Ready"
+     }
+
+4. **PUT Update Task (`PUT /task/update/{id}`)**:
+   - Request: `PUT /task/update/2`
+   - Body:
+     ```json
+     {
+         "jobId": 102,
+         "taskSeqId": 2,
+         "dependentOnTaskSeqId": 0,
+         "taskStatus": "Processing"
+     }
+
+5. **DELETE Task (`DELETE /task/delete/{id}`)**:
+   - Request: `DELETE /task/delete/3`
+   - Response: Status `200 OK` if successful.
