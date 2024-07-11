@@ -1,0 +1,13 @@
+This File is about what were asked during INTERVIEW of AROSYS .
+
+
+1. What do you know about OOPs?
+2. What is Data Encapsulation? How do you achieve it?
+3. What is Stack and Heap?
+4. Coding Questions !
+
+5. You have worked in Spring Boot , right! So what is Spring and Why Spring Boot?
+6.What is @SpringBootApplication annotation ?
+7. Difference between DELeTE and TRUNCATE?
+8. Difference between BETWEEN and IN query?
+9. 
