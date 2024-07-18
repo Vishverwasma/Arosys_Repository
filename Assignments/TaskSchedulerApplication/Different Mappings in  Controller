@@ -1,0 +1,249 @@
+GET /scheduler/jobs: Retrieves all jobs from the database.
+GET /scheduler/jobs/{jobId}: Retrieves a specific job by its ID.
+GET /scheduler/tasks: Retrieves all tasks from the database.
+GET /scheduler/tasks/{taskId}: Retrieves a specific task by its ID.
+POST /scheduler/jobs: Creates a new job.
+POST /scheduler/tasks: Creates a new task.
+PUT /scheduler/jobs/{jobId}: Updates an existing job.
+PUT /scheduler/tasks/{taskId}: Updates an existing task.
+DELETE /scheduler/jobs/{jobId}: Deletes a job by its ID.
+DELETE /scheduler/tasks/{taskId}: Deletes a task by its ID
+---------------------------------------------------------------------
+all the REST APIs for the TaskScheduler project, including the endpoints and their descriptions:
+
+REST API Endpoints
+1. Start Scheduler
+Endpoint: POST /scheduler/start
+Description: Starts the task scheduler.
+Response: "Scheduler started"
+2. Get All Jobs
+Endpoint: GET /scheduler/jobs
+Description: Retrieves all jobs from the database.
+Response: A list of Job objects.
+3. Get Job by ID
+Endpoint: GET /scheduler/jobs/{jobId}
+Description: Retrieves a specific job by its ID.
+Path Variable:
+jobId (Long): ID of the job to retrieve.
+Response: The Job object if found, 404 Not Found if not.
+4. Get All Tasks
+Endpoint: GET /scheduler/tasks
+Description: Retrieves all tasks from the database.
+Response: A list of Task objects.
+5. Get Task by ID
+Endpoint: GET /scheduler/tasks/{taskId}
+Description: Retrieves a specific task by its ID.
+Path Variable:
+taskId (Long): ID of the task to retrieve.
+Response: The Task object if found, 404 Not Found if not.
+6. Create Job
+Endpoint: POST /scheduler/jobs
+Description: Creates a new job.
+Request Body: JSON representation of the Job object.
+Response: The created Job object.
+7. Create Task
+Endpoint: POST /scheduler/tasks
+Description: Creates a new task.
+Request Body: JSON representation of the Task object.
+Response: The created Task object.
+8. Update Job
+Endpoint: PUT /scheduler/jobs/{jobId}
+Description: Updates an existing job.
+Path Variable:
+jobId (Long): ID of the job to update.
+Request Body: JSON representation of the updated Job object.
+Response: The updated Job object if found, 404 Not Found if not.
+9. Update Task
+Endpoint: PUT /scheduler/tasks/{taskId}
+Description: Updates an existing task.
+Path Variable:
+taskId (Long): ID of the task to update.
+Request Body: JSON representation of the updated Task object.
+Response: The updated Task object if found, 404 Not Found if not.
+10. Delete Job
+Endpoint: DELETE /scheduler/jobs/{jobId}
+Description: Deletes a job by its ID.
+Path Variable:
+jobId (Long): ID of the job to delete.
+Response: 204 No Content if the job was deleted, 404 Not Found if not.
+11. Delete Task
+Endpoint: DELETE /scheduler/tasks/{taskId}
+Description: Deletes a task by its ID.
+Path Variable:
+taskId (Long): ID of the task to delete.
+Response: 204 No Content if the task was deleted, 404 Not Found if not.
+------------------------------------------------------------------------
+Here is the table of Endpoints:
+
+| HTTP Method | Endpoint                    | Description                           |
+|-------------|-----------------------------|---------------------------------------|
+| POST        | /scheduler/start            | Starts the task scheduler             |
+| GET         | /scheduler/jobs             | Retrieves all jobs                    |
+| GET         | /scheduler/jobs/{jobId}     | Retrieves a job by ID                 |
+| GET         | /scheduler/tasks            | Retrieves all tasks                   |
+| GET         | /scheduler/tasks/{taskId}   | Retrieves a task by ID                |
+| POST        | /scheduler/jobs             | Creates a new job                     |
+| POST        | /scheduler/tasks            | Creates a new task                    |
+| PUT         | /scheduler/jobs/{jobId}     | Updates an existing job               |
+| PUT         | /scheduler/tasks/{taskId}   | Updates an existing task              |
+| DELETE      | /scheduler/jobs/{jobId}     | Deletes a job by ID                   |
+| DELETE      | /scheduler/tasks/{taskId}   | Deletes a task by ID                  |
+-------------------------------------------------------------------------------------
+
+
+Sure, here are the JSON requests you can use to interact with the endpoints provided in your `TaskSchedulerController`:
+
+1. **Start Scheduler**:
+   - **Endpoint**: POST `/scheduler/start`
+   - **JSON Request**:
+     ```json
+     POST /scheduler/start
+     Content-Type: application/json
+     
+     {}
+     ```
+
+2. **Get All Jobs**:
+   - **Endpoint**: GET `/scheduler/jobs`
+   - **JSON Request**:
+     ```json
+     GET /scheduler/jobs
+     Content-Type: application/json
+     
+     {}
+     ```
+
+3. **Get Job by ID**:
+   - **Endpoint**: GET `/scheduler/jobs/{jobId}`
+   - **JSON Request**:
+     ```json
+     GET /scheduler/jobs/{jobId}
+     Content-Type: application/json
+     
+     {}
+     ```
+
+4. **Get All Tasks**:
+   - **Endpoint**: GET `/scheduler/tasks`
+   - **JSON Request**:
+     ```json
+     GET /scheduler/tasks
+     Content-Type: application/json
+     
+     {}
+     ```
+
+5. **Get Task by ID**:
+   - **Endpoint**: GET `/scheduler/tasks/{taskId}`
+   - **JSON Request**:
+     ```json
+     GET /scheduler/tasks/{taskId}
+     Content-Type: application/json
+     
+     {}
+     ```
+
+6. **Create Job**:
+   - **Endpoint**: POST `/scheduler/jobs`
+   - **JSON Request**:
+     ```json
+     POST /scheduler/jobs
+     Content-Type: application/json
+     
+     {
+       "customer": {
+         "id": 1
+       },
+       "flowName": "Example Flow",
+       "priority": "High",
+       "jobStatus": "Pending",
+       "createdAt": "2024-07-11T12:00:00"
+     }
+     ```
+
+7. **Create Task**:
+   - **Endpoint**: POST `/scheduler/tasks`
+   - **JSON Request**:
+     ```json
+     POST /scheduler/tasks
+     Content-Type: application/json
+     
+     {
+       "job": {
+         "id": 1
+       },
+       "taskSeqId": 1,
+       "dependentOnTaskSeqId": "",
+       "taskStatus": "Pending"
+     }
+     ```
+
+8. **Update Job**:
+   - **Endpoint**: PUT `/scheduler/jobs/{jobId}`
+   - **JSON Request**:
+     ```json
+     PUT /scheduler/jobs/{jobId}
+     Content-Type: application/json
+     
+     {
+       "flowName": "Updated Flow",
+       "priority": "Medium",
+       "jobStatus": "Processing",
+       "createdAt": "2024-07-11T14:00:00"
+     }
+     ```
+
+9. **Update Task**:
+   - **Endpoint**: PUT `/scheduler/tasks/{taskId}`
+   - **JSON Request**:
+     ```json
+     PUT /scheduler/tasks/{taskId}
+     Content-Type: application/json
+     
+     {
+       "taskSeqId": 2,
+       "dependentOnTaskSeqId": "1",
+       "taskStatus": "Processing"
+     }
+     ```
+
+10. **Delete Job**:
+    - **Endpoint**: DELETE `/scheduler/jobs/{jobId}`
+    - **JSON Request**:
+      ```json
+      DELETE /scheduler/jobs/{jobId}
+      Content-Type: application/json
+      
+      {}
+      ```
+
+11. **Delete Task**:
+    - **Endpoint**: DELETE `/scheduler/tasks/{taskId}`
+    - **JSON Request**:
+      ```json
+      DELETE /scheduler/tasks/{taskId}
+      Content-Type: application/json
+      
+      {}
+      ```
+---------------------------------------------------------------------
+Creating a Task (POST /scheduler/tasks):
+
+{
+  "job_id": 1,  // Ensure this exists in your `db_jobs` table as `id`
+  "taskSeqId": 1,
+  "dependentOnTaskSeqId": "2,3",
+  "taskStatus": "Ready"
+}
+
+
+Creating a Job (POST /scheduler/jobs):
+
+{
+  "clientId": 1,  // Ensure this exists in your `customer` table as `id`
+  "flowName": "Flow Name",
+  "priority": "High",
+  "jobStatus": "Pending",
+  "createdAt": "2024-07-12T10:00:00"
+}
+
